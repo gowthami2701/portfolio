@@ -267,7 +267,7 @@
 
   /* ─── PROJECTS ─── */
   .projects-section { background: var(--paper); }
-  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .proj-card {
     background: var(--white);
     border: 1px solid var(--border);
@@ -275,6 +275,7 @@
     padding: 2rem;
     transition: all 0.25s;
     position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
   }
   .proj-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -291,18 +292,33 @@
   .cat-teal { background: var(--teal-xlight); color: var(--teal); }
   .cat-gold { background: var(--gold-light); color: var(--gold); }
   .cat-ink { background: #F0EEE9; color: var(--ink2); }
+  .cat-purple { background: #F0EEFF; color: #6B4EAA; }
   .proj-card h3 {
     font-family: var(--serif);
     font-size: 1.3rem; font-weight: 400;
     color: var(--ink); margin-bottom: 0.75rem; line-height: 1.3;
   }
-  .proj-card p { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; margin-bottom: 1.25rem; }
+  .proj-card p { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; margin-bottom: 1.25rem; flex: 1; }
+  .proj-impact {
+    font-size: 0.78rem; font-weight: 600; color: var(--teal);
+    background: var(--teal-xlight); border-radius: 6px;
+    padding: 6px 12px; margin-bottom: 1rem; display: inline-block;
+  }
+  .proj-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; flex-wrap: wrap; gap: 10px; }
   .proj-tools { display: flex; flex-wrap: wrap; gap: 5px; }
   .proj-tool {
     font-size: 0.68rem; padding: 3px 9px; border-radius: 4px;
     background: var(--paper); border: 1px solid var(--border);
     color: var(--ink3);
   }
+  .proj-github {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.72rem; font-weight: 600; color: var(--teal);
+    text-decoration: none; padding: 6px 14px;
+    border: 1.5px solid rgba(10,92,71,0.25); border-radius: 6px;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  .proj-github:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
   .proj-number {
     position: absolute; bottom: 1.5rem; right: 1.75rem;
     font-family: var(--serif); font-size: 3rem; font-weight: 300;
@@ -602,44 +618,111 @@
       <h2 class="section-title">Featured <em>Projects</em></h2>
     </div>
     <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
       <div class="proj-card">
-        <span class="proj-category cat-teal">Healthcare IT</span>
-        <h3>Healthcare Data Submission Platform</h3>
-        <p>Designed a compliance-based database system to streamline clinical and pharmaceutical data submission. Applied Quality by Design principles to ensure data integrity, error prevention, and full traceability across regulated workflows.</p>
-        <div class="proj-tools">
-          <span class="proj-tool">SQL</span>
-          <span class="proj-tool">Database Design</span>
-          <span class="proj-tool">QbD Principles</span>
-          <span class="proj-tool">HIPAA</span>
-          <span class="proj-tool">Data Validation</span>
+        <span class="proj-category cat-teal">Revenue Cycle Management</span>
+        <h3>Revenue Cycle Analytics Dashboard</h3>
+        <p>End-to-end RCM analytics system analyzing 5,000+ CMS Medicare claims. Tracks denial rates, Days in AR, Clean Claim Rate, and First Pass Resolution Rate with automated KPI stored procedures and payer performance scorecards.</p>
+        <span class="proj-impact">💰 Identified $6M annual revenue recovery opportunity</span>
+        <div class="proj-footer">
+          <div class="proj-tools">
+            <span class="proj-tool">SQL</span>
+            <span class="proj-tool">Python</span>
+            <span class="proj-tool">Power BI</span>
+            <span class="proj-tool">CMS Medicare Data</span>
+            <span class="proj-tool">ICD-10 / CPT</span>
+          </div>
+          <a href="https://github.com/gowthami2701/revenue-cycle-analytics" target="_blank" class="proj-github">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
         </div>
         <div class="proj-number">01</div>
       </div>
+
+      <!-- PROJECT 2 -->
       <div class="proj-card">
-        <span class="proj-category cat-teal">Analytics Dashboard</span>
-        <h3>Patient Medication Analytics Dashboard</h3>
-        <p>Built interactive Power BI and Tableau dashboards tracking medication adherence and prescription trends. Provided clinical pharmacists with real-time insights to enhance medication safety and support population health management decisions.</p>
-        <div class="proj-tools">
-          <span class="proj-tool">Power BI</span>
-          <span class="proj-tool">Tableau</span>
-          <span class="proj-tool">Python</span>
-          <span class="proj-tool">EHR Data</span>
-          <span class="proj-tool">Population Health</span>
+        <span class="proj-category cat-gold">Predictive Analytics · CMS HRRP</span>
+        <h3>30-Day Hospital Readmission Prediction</h3>
+        <p>Machine learning pipeline predicting 30-day readmissions using XGBoost (AUC 0.81). Built on CMS HRRP compliance framework with clinical feature engineering, SHAP explainability, and 4-tier risk stratification for care coordinators.</p>
+        <span class="proj-impact">🏥 Estimated $2.8M penalty avoidance annually</span>
+        <div class="proj-footer">
+          <div class="proj-tools">
+            <span class="proj-tool">Python</span>
+            <span class="proj-tool">XGBoost</span>
+            <span class="proj-tool">Scikit-learn</span>
+            <span class="proj-tool">SHAP</span>
+            <span class="proj-tool">Tableau</span>
+          </div>
+          <a href="https://github.com/gowthami2701/readmission-prediction" target="_blank" class="proj-github">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
         </div>
         <div class="proj-number">02</div>
       </div>
+
+      <!-- PROJECT 3 -->
       <div class="proj-card">
-        <span class="proj-category cat-gold">Published Research</span>
-        <h3>Doravirine Quantification Research</h3>
-        <p>Developed and validated an analytical method achieving R²=0.999 for antiviral compound quantification under ICH/FDA guidelines. Research published in peer-reviewed journal, demonstrating laboratory-grade data accuracy and reproducibility.</p>
-        <div class="proj-tools">
-          <span class="proj-tool">Statistical Analysis</span>
-          <span class="proj-tool">ICH/FDA Standards</span>
-          <span class="proj-tool">Method Validation</span>
-          <span class="proj-tool">Published 2023</span>
+        <span class="proj-category cat-ink">HIPAA Compliance · Database Design</span>
+        <h3>HIPAA-Compliant Healthcare Database</h3>
+        <p>Production-grade PostgreSQL EHR database with PHI vault encryption, role-based access control (RBAC), automatic audit trigger logging on all PHI tables, and a Safe Harbor de-identification view — fully mapped to HIPAA §164.312 requirements.</p>
+        <span class="proj-impact">🔐 Full HIPAA §164.312 compliance implemented</span>
+        <div class="proj-footer">
+          <div class="proj-tools">
+            <span class="proj-tool">PostgreSQL</span>
+            <span class="proj-tool">HIPAA/HITECH</span>
+            <span class="proj-tool">RBAC</span>
+            <span class="proj-tool">ICD-10-CM</span>
+            <span class="proj-tool">PHI Encryption</span>
+          </div>
+          <a href="https://github.com/gowthami2701/hipaa-database-design" target="_blank" class="proj-github">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
         </div>
         <div class="proj-number">03</div>
       </div>
+
+      <!-- PROJECT 4 -->
+      <div class="proj-card">
+        <span class="proj-category cat-purple">Population Health · CDC PLACES</span>
+        <h3>Population Health — Chronic Disease Surveillance</h3>
+        <p>County-level chronic disease analysis using CDC PLACES format data across 500 US counties. K-Means clustering identifies 4 health archetypes, SDOH correlation analysis, and a Priority Intervention Matrix targeting 47 high-need counties.</p>
+        <span class="proj-impact">📊 Flagged 8.2M people in Priority-1 intervention zones</span>
+        <div class="proj-footer">
+          <div class="proj-tools">
+            <span class="proj-tool">Python</span>
+            <span class="proj-tool">CDC PLACES</span>
+            <span class="proj-tool">K-Means Clustering</span>
+            <span class="proj-tool">Tableau</span>
+            <span class="proj-tool">SDOH Analysis</span>
+          </div>
+          <a href="https://github.com/gowthami2701/population-health-analytics" target="_blank" class="proj-github">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="proj-number">04</div>
+      </div>
+
+      <!-- PROJECT 5 - Published Research (kept from original) -->
+      <div class="proj-card" style="grid-column: 1 / -1;">
+        <span class="proj-category cat-gold">Published Research</span>
+        <h3>Doravirine Quantification Research</h3>
+        <p>Developed and validated an analytical method achieving R²=0.999 for antiviral compound quantification under ICH/FDA guidelines. Research published in peer-reviewed journal, demonstrating laboratory-grade data accuracy and reproducibility.</p>
+        <div class="proj-footer">
+          <div class="proj-tools">
+            <span class="proj-tool">Statistical Analysis</span>
+            <span class="proj-tool">ICH/FDA Standards</span>
+            <span class="proj-tool">Method Validation</span>
+            <span class="proj-tool">Peer-Reviewed · Published 2023</span>
+          </div>
+        </div>
+        <div class="proj-number">05</div>
+      </div>
+
     </div>
   </div>
 </section>
